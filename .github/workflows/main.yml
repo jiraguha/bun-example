@@ -13,7 +13,6 @@ on:
 jobs:
   push_to_ecr:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -42,7 +41,7 @@ jobs:
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
     - name: Build and push latest image
-      if:  github.ref == 'refs/heads/master'
+      if:  github.ref == 'refs/heads/main'
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: bun-example # Or separate repo for master
