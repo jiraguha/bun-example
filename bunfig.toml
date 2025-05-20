@@ -1,0 +1,4 @@
+[test]
+# Configure the test environment
+preload = "./tests/setup.ts"
+coverage = true
