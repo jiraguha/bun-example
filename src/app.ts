@@ -18,6 +18,13 @@ app.get('/status', (c) => {
     })
 })
 
+app.get('/health', (c) => {
+    return c.json({
+        status: 'up',
+        timestamp: new Date().toISOString()
+    })
+})
+
 // Add a simple root route
 app.get('/', (c) => {
     return c.text('Hello from Hono! Try the /status endpoint')
