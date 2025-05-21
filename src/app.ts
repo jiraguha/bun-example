@@ -13,7 +13,8 @@ app.get('/status', (c) => {
             APP_VERSION: process.env.APP_VERSION || '1.0.0',
             BUN_ENV: process.env.BUN_ENV || 'local',
             SERVER_PORT: process.env.PORT || '3000',
-            OTHER_ENV: process.env.OTHER_ENV || null
+            OTHER_ENV: process.env.OTHER_ENV || null,
+            version: "1.0.1"
         }
     })
 })
